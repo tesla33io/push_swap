@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   2_process_input.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:45:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/17 19:05:24 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/17 19:12:33 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/17 20:39:41 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/ft_printf.h"
-#include <stdarg.h>
+#include "push_swap.h"
+#include "libft.h"
 #include <stdlib.h>
 
-int	ft_printf(int fd, const char *format, ...)
+t_deque	*parse_input(int argc, char **argv)
 {
-	va_list	arg;
-	int		done;
+	int		i;
+	int		value;
+	t_deque	*deque;
 
-	if (!format)
-		return (-1);
-	if (*format == '\0')
-		return (0);
-	va_start (arg, format);
-	done = print(fd, format, arg);
-	va_end (arg);
-	return (done);
+	i = 0;
+	deque = malloc(sizeof(t_deque));
+	deque->head = NULL;
+	while (++i < argc)
+	{
+		value = ft_atoi(argv[i]);
+		deque_emplace_back(deque, value);
+	}
+	return (deque);
 }

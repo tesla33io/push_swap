@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:45:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/17 19:05:24 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/17 19:12:54 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/17 20:55:05 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/ft_printf.h"
-#include <stdarg.h>
-#include <stdlib.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	ft_printf(int fd, const char *format, ...)
-{
-	va_list	arg;
-	int		done;
+# include "libft.h"
 
-	if (!format)
-		return (-1);
-	if (*format == '\0')
-		return (0);
-	va_start (arg, format);
-	done = print(fd, format, arg);
-	va_end (arg);
-	return (done);
-}
+/* INPUT */
+
+t_deque		*parse_input(int argc, char **argv);
+
+#endif
