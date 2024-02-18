@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 19:12:54 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/17 20:55:05 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/18 19:53:32 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/18 20:15:28 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
+#include "ft_printf.h"
+#include "push_swap.h"
 
-# include "libft.h"
+void	do_push(t_deque *from, t_deque *to, t_bool print, char *op)
+{
+	t_deque_node	*el;
 
-/* INPUT */
-
-t_deque		*parse_input(int argc, char **argv);
-
-#endif
+	if (from->size < 1)
+		return ;
+	el = deque_pop_front(from);
+	deque_push_front(to, el);
+	if (print)
+		ft_printf(1, "%s\n", op);
+}

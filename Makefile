@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/17 20:54:33 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/18 20:09:02 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,19 @@ CC					:= cc
 CFLAGS				:= -Wall -Werror -Wextra -g
 DEBUGFLAGS			:= -g
 LIBS				= -Lft_printf/ -lftprintf -Llibft/ -lft
-INCLUDES			= -I./ft_printf/includes -I./libft/ -I.
+INCLUDES			= -I./include/ -I./ft_printf/includes -I./libft/ -I.
 NAME				:= push_swap
 
 
-SRCS				+= 1_main.c
-SRCS				+= 2_process_input.c
+CFILES				+= main.c
+CFILES				+= process_input.c
+CFILES				+= operations/swap.c
+CFILES				+= operations/push.c
+CFILES				+= operations/rotate.c
+
+
 OBJ_DIR				:= ./obj/
-OBJS				:= $(patsubst %.c, $(OBJ_DIR)%.o, $(SRCS))
+OBJS				:= $(patsubst %.c, $(OBJ_DIR)%.o, $(CFILES))
 
 
 DEPS				:= $(OBJS:.o=.d)
@@ -43,7 +48,7 @@ all: $(NAME)
 -include $(DEPS)
 
 
-$(OBJ_DIR)%.o: %.c
+$(OBJ_DIR)%.o: */%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -MMD -MF $(patsubst %.o,%.d,$@) $(INCLUDES) -c $< -o $@
 
