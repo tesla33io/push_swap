@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/18 20:09:02 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/19 12:13:51 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,11 @@ $(NAME): $(OBJS) $(LFT_BIN) $(FT_PRINTF_BIN)
 	@echo -n "\033[32;49;3m... Compiling code ...\033[0m\r"
 	@$(CC) $(CFLAGS) -o $(NAME) $(INCLUDES) $(OBJS) $(LIBS)
 	@echo "\033[32;49;1m>>>   Done!   <<<\033[0m          "
+
+
+test: $(NAME)
+	@echo "\033[32;49;3m\tRun simple test\033[0m"
+	@-./$(NAME) 2 1 3 6 5 8
 
 
 $(FT_PRINTF_BIN):

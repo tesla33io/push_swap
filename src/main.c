@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 17:55:16 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/18 20:17:54 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:14:24 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,5 @@ int	main(int argc, char **argv)
 	a = parse_input(argc, argv);
 	b = malloc(sizeof(t_deque));
 	b->head = NULL;
-	ft_printf(1, "-- Start --\n");
-	deque_print(a);
-	// deque_print(b);
-	do_swap(a, true, SA);
-	do_push(a, b, true, PB);
-	do_push(a, b, true, PB);
-	do_push(a, b, true, PB);
-	do_rotate(b, true, RB);
-	do_reverse_rotate(a, true, RRA);
-	deque_print(a);
-	deque_print(b);
-	free(b);
 	return (0);
 }
