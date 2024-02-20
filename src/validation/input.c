@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 12:15:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/19 12:29:40 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/17 19:12:33 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/20 21:38:25 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include <stdlib.h>
 
-void	begin(t_deque *a, t_deque *b)
+t_deque	*parse_input(int argc, char **argv)
 {
-	do_push(a, b, true, "pb");
-	do_push(a, b, true, "pb");
-}
+	int		i;
+	int		value;
+	t_deque	*deque;
 
-void	end(t_deque *a, t_deque *b)
-{
-	//
-}
-
-int	count_steps(t_deque *a, t_deque *b)
-{
-	
+	i = 0;
+	deque = malloc(sizeof(t_deque));
+	deque->head = NULL;
+	while (++i < argc)
+	{
+		value = ft_atoi(argv[i]);
+		deque_emplace_back(deque, value);
+	}
+	deque->size = i - 1;
+	return (deque);
 }
