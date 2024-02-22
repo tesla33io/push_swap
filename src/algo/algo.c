@@ -6,43 +6,31 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:15:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/20 21:37:54 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:23:51 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
+#include "ft_printf.h"
 
 void	begin(t_deque *a, t_deque *b)
 {
 	do_push(a, b, true, "pb");
 	do_push(a, b, true, "pb");
+	sort_b(b);
 }
 
-void	do_move(t_deque *from, t_deque *to, char *op)
+void	fill_up_b(t_deque *a, t_deque *b)
 {
-	if (from->head->data > to->head->data)
-		do_push(from, to, true, op);
-	else
-	{
-		do_push(from, to, true, op);
-		do_rotate(to, true, op);
-	}
-}
+	long int		avg;
 
-void	do_bring_up(t_deque *d, int index)
-{
-	int		i;
-
-	i = -1;
-	if (index < (int) d->size / 2)
+	avg = 0;
+	while (a->size > 3)
 	{
-		while (++i < index - 1)
-			do_rotate(d, true, RA);
-	}
-	else
-	{
-		while (++i < (int) d->size - index)
-			do_reverse_rotate(d, true, RRA);
+		avg = stack_avg(a);
+		if (a->head->data > avg)
+			do_rotate(a, true, RA);
+		else
+			do_push(a, b, true, PB);
 	}
 }

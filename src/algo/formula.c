@@ -6,12 +6,11 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:20:07 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/20 22:25:16 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:28:02 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 /**
  * @brief  Function to count how many 'basic' steps needed to move node
@@ -28,11 +27,12 @@ int	count_steps(t_deque *a, t_deque *b, int iia, t_deque_node *nodea)
 	int				i;
 	t_deque_node	*cur;
 
+	(void)a;
 	n_steps = 0;
 	i = 0;
 	cur = b->head;
-	if (iia > (int) a->size / 2)
-		n_steps++;
+	// if (iia > (int) a->size / 2)
+	// 	n_steps++;
 	if (cur->data < nodea->data)
 		return (iia + 1 - n_steps);
 	else if (nodea->data < cur->prev->data)
