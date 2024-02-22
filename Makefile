@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/22 20:32:24 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/22 20:46:37 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CFILES				+= operations/rotate.c	# <<
 CFILES				+= algo/algo.c			# Algo files
 CFILES				+= algo/formula.c		# <<
 CFILES				+= algo/transfer.c		# <<
-CFILES				+= utils/sort.c		# Utils
+CFILES				+= utils/sort.c			# Utils
 CFILES				+= utils/avg.c			# <<
 CFILES				+= utils/minmax.c		# <<
 

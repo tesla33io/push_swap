@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:15:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 19:43:16 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/22 21:29:39 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ void	begin(t_deque *a, t_deque *b)
 void	fill_up_b(t_deque *a, t_deque *b)
 {
 	long int		avg;
+	size_t			half;
 
 	avg = 0;
-	while (a->size > 3)
+	half = (size_t) a->size / 2;
+	while (a->size > 3 && a->size > half)
 	{
 		avg = stack_avg(a);
-		if (a->head->data > avg)
+		if (a->head->data >= avg)
 			do_rotate(a, true, RA);
 		else
 			do_push(a, b, true, PB);

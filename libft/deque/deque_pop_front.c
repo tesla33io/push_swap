@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:22:36 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 19:46:10 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/22 20:47:31 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_deque_node	*deque_pop_front(t_deque *deque)
 		deque->head = NULL;
 	else
 	{
-		// free(deque->head);
+		free(deque->head);
 		deque->head = next;
 		next->prev = prev;
 		prev->next = next;
