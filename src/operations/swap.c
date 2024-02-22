@@ -6,11 +6,10 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:23:19 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/18 20:07:11 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:48:33 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 #include "push_swap.h"
 
