@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque_pop_front.c                                  :+:      :+:    :+:   */
+/*   avg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 20:22:36 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 19:46:10 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/22 14:36:57 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/22 18:05:11 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "libft.h"
-#include <stdlib.h>
 
-t_deque_node	*deque_pop_front(t_deque *deque)
+long int	stack_avg(t_deque *d)
 {
-	t_deque_node	*prev;
-	t_deque_node	*head;
-	t_deque_node	*next;
+	long int		sum;
+	t_deque_node	*cur;
 
-	head = deque->head;
-	if (!head)
-		return (NULL);
-	prev = head->prev;
-	next = head->next;
-	if (head == head->next)
-		deque->head = NULL;
-	else
+	sum = 0;
+	cur = d->head;
+	while (cur != d->head->prev)
 	{
-		// free(deque->head);
-		deque->head = next;
-		next->prev = prev;
-		prev->next = next;
+		sum += cur->data;
+		cur = cur->next;
 	}
-	head->next = NULL;
-	head->prev = NULL;
-	deque->size -= 1;
-	return (head);
+	sum += cur->data;
+	return (sum / d->size);
+}
+
+long int	new_avg(t_deque *d, long int oavg, int rval)
+{
+	long int	newa;
+
+	newa = (oavg * (d->size + 1)) - rval;
+	newa /= d->size;
+	return (newa);
 }

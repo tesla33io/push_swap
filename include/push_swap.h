@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 19:12:54 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/20 22:16:41 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:41:53 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include <stddef.h>
 
 # define SA  "sa"
 # define SB  "sb"
@@ -32,8 +33,6 @@ typedef enum e_bool
 	false = 0,
 	true = 1
 }	t_bool;
-
-
 
 /* INPUT */
 
@@ -54,10 +53,23 @@ void		do_rrr(t_deque *a, t_deque *b, t_bool print);
 
 /* ALGO STUFF */
 
-t_bool		is_b_sorted(t_deque *b);
+t_bool		is_sorted(t_deque *b);
 void		sort_b(t_deque *b);
+void		sort_a(t_deque *a);
 
 void		begin(t_deque *a, t_deque *b);
 int			count_steps(t_deque *a, t_deque *b, int iia, t_deque_node *nodea);
+
+void		fill_up_b(t_deque *a, t_deque *b);
+void		push_back_to_a(t_deque *a, t_deque *b);
+int			calc_ops_in_target(t_deque *trgt, int val);
+
+/* UTILS */
+
+void		deque_print(t_deque *deque);
+long int	stack_avg(t_deque *d);
+long int	new_avg(t_deque *d, long int oavg, int rval);
+size_t		get_min_pos(t_deque *d);
+size_t		get_max_pos(t_deque *d);
 
 #endif

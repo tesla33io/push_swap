@@ -6,12 +6,11 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 19:12:33 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/20 21:38:25 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:48:41 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 #include <stdlib.h>
 
 t_deque	*parse_input(int argc, char **argv)

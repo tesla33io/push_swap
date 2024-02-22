@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:15:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 18:23:51 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:43:16 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,18 @@ void	fill_up_b(t_deque *a, t_deque *b)
 			do_rotate(a, true, RA);
 		else
 			do_push(a, b, true, PB);
+	}
+}
+
+void	push_back_to_a(t_deque *a, t_deque *b)
+{
+	int	i;
+
+	while (b->size > 0)
+	{
+		i = 0;
+		while (i < calc_ops_in_target(a, b->head->data))
+			do_rotate(a, true, RA);
+		do_push(b, a, true, PA);
 	}
 }

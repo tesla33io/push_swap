@@ -6,15 +6,15 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/20 21:23:02 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/22 20:32:24 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC					:= cc
 CFLAGS				:= -Wall -Werror -Wextra -g
 DEBUGFLAGS			:= -g
-LIBS				= -Lft_printf/ -lftprintf -Llibft/ -lft
-INCLUDES			= -I./include/ -I./ft_printf/includes -I./libft/ -I.
+LIBS				:= -Lft_printf/ -lftprintf -Llibft/ -lft
+INCLUDES			:= -I./include/ -I./ft_printf/includes -I./libft/ -I.
 NAME				:= push_swap
 
 
@@ -24,8 +24,11 @@ CFILES				+= operations/swap.c	# Operations
 CFILES				+= operations/push.c	# <<
 CFILES				+= operations/rotate.c	# <<
 CFILES				+= algo/algo.c			# Algo files
-CFILES				+= algo/sort_b.c		# <<
 CFILES				+= algo/formula.c		# <<
+CFILES				+= algo/transfer.c		# <<
+CFILES				+= utils/sort.c		# Utils
+CFILES				+= utils/avg.c			# <<
+CFILES				+= utils/minmax.c		# <<
 
 
 OBJ_DIR				:= ./obj/
