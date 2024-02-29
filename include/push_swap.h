@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 19:12:54 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 20:54:04 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:14:39 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,12 @@ void		fill_up_b(t_deque *a, t_deque *b);
 void		push_back_to_a(t_deque *a, t_deque *b);
 int			calc_ops_in_target(t_deque *trgt, int val);
 
+int			lis(int arr[], int n);
+
 /* UTILS */
 
 void		deque_print(t_deque *deque);
+void		deque_insert(t_deque *d, int i, t_deque_type val);
 long int	stack_avg(t_deque *d);
 long int	new_avg(t_deque *d, long int oavg, int rval);
 size_t		get_min_pos(t_deque *d);
