@@ -1,10 +1,6 @@
 # push_swap
 Sort stacks
 
-### Suitable algorithms
-
-1. Radix Sort
-
 ### Available operations
 | Short name               | Description                                                                                            |
 |--------------------------|--------------------------------------------------------------------------------------------------------|
