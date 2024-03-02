@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:35:28 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/29 15:18:00 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:36:16 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	lis(int arr[], int n)
 		while (++j < i)
 		{
 			if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
-				lis[i] = lis[j] + 1; 	
+				lis[i] = lis[j] + 1;
 		}
 		i++;
 	}
