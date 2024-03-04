@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/04 17:51:59 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/04 18:34:11 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ CFILES				+= utils/sort.c				# Utils
 CFILES				+= utils/avg.c				# <<
 CFILES				+= utils/minmax.c			# <<
 CFILES				+= utils/deque_insert.c		# <<
+CFILES				+= utils/deque_index.c		# <<
 CFILES				+= utils/utils_print.c		# <<
 
 
