@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:31:51 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/15 20:43:53 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:56:45 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define R			"\033[00m"
 # define BOLD		"\033[1m"
-# define DARK		"\033[2m"
+# define BLACK		"\033[30m"
 # define UNDERLINE	"\033[4m"
 # define BLINK		"\033[5m"
 # define REVERSE	"\033[7m"
