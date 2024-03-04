@@ -14,6 +14,11 @@ python_script_output=$(python3 ngen.py "$n")
 
 # Run make to update the bin if anything changed
 # and run push_swap with random numbers after
+echo -ne "\033[31m*******************************************************"
+echo -e "************************************************\033[0m\n"
+
 make
 ./push_swap $python_script_output
 echo -e "Used command: ./push_swap $python_script_output"
+echo -ne "\n\033[31m*******************************************************"
+echo -e "************************************************\033[0m"
