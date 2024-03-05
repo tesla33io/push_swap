@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 19:12:54 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/04 18:44:43 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:10:02 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,13 @@ void		fill_up_b(t_deque *a, t_deque *b);
 void		push_back_to_a(t_deque *a, t_deque *b);
 int			clsts_to_t(t_deque *trgt, int val);
 void		transfer(t_deque *a, t_deque *b, t_deque_type val);
+void		move_head(t_deque *from, t_deque *to);
 
 int			lis(int arr[], int n);
+
+/* experimental FUNCTIONS */
+
+void		move_cheapest(t_deque *a, t_deque *b, char *rotate, char *push);
 
 /* UTILS */
 
@@ -75,6 +80,8 @@ long int	stack_avg(t_deque *d);
 long int	new_avg(t_deque *d, long int oavg, int rval);
 size_t		get_min_pos(t_deque *d);
 size_t		get_max_pos(t_deque *d);
+void		move_min_on_top(t_deque *d, char *op);
 int			deque_get_index(t_deque *d, t_deque_type val);
+int			ft_abs(int val);
 
 #endif

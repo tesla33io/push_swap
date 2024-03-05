@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:46:39 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/05 17:28:23 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:43:35 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,47 @@
 #include <stdlib.h>
 
 /**
- * @brief  Calculates the position of the node with the closest value to the top of the target stack.
- * @note   Returns the amount of steps required to bring a node to the top of the target stack.
+
+	* @brief  Calculates the position of the node with the closest value to the top of the target stack.
+
+	* @note   Returns the amount of steps required to bring a node to the top of the target stack.
  * @param  *trgt: pointer to the stack where to look
  * @param  val: value that will be transferred to the target stack
  * @retval position of the closest node (by value) to the top
  */
 int	clsts_to_t(t_deque *trgt, int val)
 {
-	int				pos;
-	int				clst;
 	int				i;
 	t_deque_node	*cur;
+	int				pos;
+	int				clst;
 
+	pos = -1;
+	clst = INT_MAX;
+	i = 0;
 	if (!trgt || !trgt->head)
 	{
 		ft_printf(2, "[transfer.c:clsts_to_t] Error.\n");
 		return (-1);
 	}
-	i = 0;
 	cur = trgt->head;
-	clst = INT_MAX;
-	while (cur != trgt->head->prev)
+	while (cur != trgt->head->prev && i++ >= 0)
 	{
-		if (cur->data > val && clst > cur->data)
+		if (cur->data > val && ft_abs(cur->data - val) < clst)
 		{
-			clst = cur->data;
+			clst = ft_abs(cur->data - val);
 			pos = i;
 		}
 		cur = cur->next;
-		i++;
 	}
 	return (pos);
 }
 
 /**
- * @brief  Calculates the position of the node with the closest value to the bottom of the target stack.
- * @note   Returns the amount of steps required to bring a node to the bottom of the target stack.
+
+	* @brief  Calculates the position of the node with the closest value to the bottom of the target stack.
+
+	* @note   Returns the amount of steps required to bring a node to the bottom of the target stack.
  * @param  *trgt: pointer to the stack where to look
  * @param  val: value that will be transferred to the target stack
  * @retval position of the closest node (by value) to the bottom
@@ -87,10 +91,10 @@ int	clsts_to_b(t_deque *trgt, int val)
 
 void	transfer(t_deque *a, t_deque *b, t_deque_type val)
 {
-	int		steps;
-	int		s_in_a;
-	int		s_in_b;
-	int		back_in_a;
+	int	steps;
+	int	s_in_a;
+	int	s_in_b;
+	int	back_in_a;
 
 	steps = clsts_to_t(a, val);
 	if (steps < 0)
@@ -107,9 +111,9 @@ void	transfer(t_deque *a, t_deque *b, t_deque_type val)
 
 void	move_head(t_deque *from, t_deque *to)
 {
-	int		ttop;
-	int		tbtm;
-	int		i;
+	int	ttop;
+	int	tbtm;
+	int	i;
 
 	ttop = clsts_to_t(to, from->head->data);
 	tbtm = clsts_to_b(to, from->head->data);

@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:54:13 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 19:13:51 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/05 18:45:32 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,15 @@ size_t	get_max_pos(t_deque *d)
 		pos++;
 	}
 	return (pos);
+}
+
+void	move_min_on_top(t_deque *d, char *op)
+{
+	size_t	i;
+	size_t	min_pos;
+
+	i = 0;
+	min_pos = get_min_pos(d);
+	while (i++ < min_pos)
+		do_rotate(d, true, op);
 }
