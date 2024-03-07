@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:28:07 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 20:07:00 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/07 21:26:47 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,51 @@
 #include <limits.h>
 
 #include "libft.h"
+#include "ft_printf.h"
 #include "operations.h"
 
 void	prepare_b(t_deque *a, t_deque *b)
 {
 	do_push(a, b, true, PB);
 	do_push(a, b, true, PB);
+	if (b->head < b->head->next)
+		do_swap(b, true, SB);
 }
 
-t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node)
+void	iterate_a(t_deque *a, t_deque *b)
 {
-	int				diff;
-	int				min_diff;
-	t_deque_node	*closest;
-	t_deque_node	*cur;
+	t_deque_node	*cur_a;
+	size_t			i_a;
+	int				ops_need;
+	int				ops_need_next;
+	int				b_node_pos;
 
-	cur = trgt->head;
-	min_diff = INT_MAX;
-	while (cur != trgt->head->prev)
+	cur_a = a->head;
+	i_a = 0;
+	while (i_a < a->size)
 	{
-		diff = ft_abs(node->data - cur->data);
-		if (diff < min_diff)
+		ops_need = 1 + deque_get_index(a, cur_a)
+			+ deque_get_index(b, get_closest_node(b, cur_a));
+		ops_need_next = 1 + deque_get_index(a, cur_a->next)
+			+ deque_get_index(b, get_closest_node(b, cur_a->next));
+		if (ops_need == 1)
 		{
-			min_diff = diff;
-			closest = cur;
+			do_push(a, b, true, PB);
+			if (b->head->data < b->head->next->data)
+				do_rotate(b, true, RB);
+			return ;
 		}
-		cur = cur->next;
+		else if (ops_need < ops_need_next)
+		{
+			b_node_pos = deque_get_index(b, get_closest_node(b, cur_a));
+			bring_node_top(a, cur_a, RA);
+			bring_node_top(b, get_closest_node(b, cur_a), RB);
+			do_rotate(b, true, RB);
+			do_push(a, b, true, PB);
+			bring_node_back(b, b_node_pos + 1, RRB);
+			return ;
+		}
+		cur_a = cur_a->next;
+		i_a++;
 	}
-	diff = ft_abs(node->data - cur->data);
-	if (diff < min_diff)
-	{
-		min_diff = diff;
-		closest = cur;
-	}
-	return (closest);
 }

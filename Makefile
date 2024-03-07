@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/07 19:55:52 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/07 20:57:36 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ NAME				:= push_swap
 CFILES				+= main.c					# Main
 CFILES				+= validation/parse.c		# Validation
 CFILES				+= algo/sort.c				# Sorting / Algo
+CFILES				+= algo/helpers.c			# #
 CFILES				+= ops/do_push.c			# Operations
 CFILES				+= ops/do_rotate.c			# #
 CFILES				+= ops/do_swap.c			# #

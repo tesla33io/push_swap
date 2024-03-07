@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:43:10 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 20:50:04 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/07 21:17:37 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ t_deque			*parse_input(int argc, char **argv);
 // Sorting
 
 void			prepare_b(t_deque *a, t_deque *b);
+void			iterate_a(t_deque *a, t_deque *b);
+
 t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node);
+void			bring_node_top(t_deque *d, t_deque_node *node, char *op);
+void			bring_node_back(t_deque *d, int index, char *op);
 
 // Utils
 
