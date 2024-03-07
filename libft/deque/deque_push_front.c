@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 20:05:49 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/22 21:22:43 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:42:34 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	deque_push_front(t_deque *deque, t_deque_node *node)
 	}
 	else
 	{
-		deque->head = malloc(sizeof(t_deque_node));
-		if (!deque->head)
-			return ;
+		deque->head = node;
 		deque->head->next = deque->head;
 		deque->head->prev = deque->head;
 	}
