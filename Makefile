@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/07 18:15:59 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/07 19:55:52 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,15 @@ INCLUDES			:= -I./include/ -I./ft_printf/includes -I./libft/ -I.
 NAME				:= push_swap
 
 
-
+CFILES				+= main.c					# Main
+CFILES				+= validation/parse.c		# Validation
+CFILES				+= algo/sort.c				# Sorting / Algo
+CFILES				+= ops/do_push.c			# Operations
+CFILES				+= ops/do_rotate.c			# #
+CFILES				+= ops/do_swap.c			# #
+CFILES				+= utils/deque_utils.c		# Utils
+CFILES				+= utils/ft_abs.c			# #
+CFILES				+= clear/clear.c			# Clear
 
 
 OBJ_DIR				:= ./obj/
@@ -85,7 +93,12 @@ fclean: clean
 	@rm -f $(NAME)
 	@echo "\033[32;1mEverything cleand!\033[0m"
 
-re: fclean all
+# TODO: remove before submitting
+norm: $(addprefix src/, $(CFILES))
+	norminette $(addprefix src/, $(CFILES)) include/*
+
+
+re: fclean all test
 
 
 .PHONY: all clean fclean re
