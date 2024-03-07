@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:43:10 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 20:02:55 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/07 20:50:04 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node);
 // Utils
 
 void			deque_print(t_deque *deque);
-int				deque_get_index(t_deque *d, t_deque_type val);
+int				deque_get_index(t_deque *d, t_deque_node *node);
 int				ft_abs(int val);
 
 // Clear
