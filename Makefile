@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/05 17:39:54 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/07 18:15:59 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,22 +18,7 @@ INCLUDES			:= -I./include/ -I./ft_printf/includes -I./libft/ -I.
 NAME				:= push_swap
 
 
-CFILES				+= main.c					# Main
-CFILES				+= validation/input.c		# Validation
-CFILES				+= operations/swap.c		# Operations
-CFILES				+= operations/push.c		# <<
-CFILES				+= operations/rotate.c		# <<
-CFILES				+= algo/algo.c				# Algo files
-CFILES				+= algo/formula.c			# <<
-CFILES				+= algo/transfer.c			# <<
-CFILES				+= algo/lis.c				# <<
-CFILES				+= utils/sort.c				# Utils
-CFILES				+= utils/avg.c				# <<
-CFILES				+= utils/abs.c				# <<
-CFILES				+= utils/minmax.c			# <<
-CFILES				+= utils/deque_insert.c		# <<
-CFILES				+= utils/deque_index.c		# <<
-CFILES				+= utils/utils_print.c		# <<
+
 
 
 OBJ_DIR				:= ./obj/
