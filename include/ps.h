@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:43:10 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 21:17:37 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:49:59 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void			bring_node_back(t_deque *d, int index, char *op);
 void			deque_print(t_deque *deque);
 int				deque_get_index(t_deque *d, t_deque_node *node);
 int				ft_abs(int val);
+long int		stack_avg(t_deque *d);
 
 // Clear
 

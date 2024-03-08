@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/07 20:57:36 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/08 16:49:48 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ CFILES				+= ops/do_rotate.c			# #
 CFILES				+= ops/do_swap.c			# #
 CFILES				+= utils/deque_utils.c		# Utils
 CFILES				+= utils/ft_abs.c			# #
+CFILES				+= utils/avg.c				# #
 CFILES				+= clear/clear.c			# Clear
 
 

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   avg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 18:42:56 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/08 15:57:01 by astavrop         ###   ########.fr       */
+/*   Created: 2024/03/08 16:49:24 by astavrop          #+#    #+#             */
+/*   Updated: 2024/03/08 16:49:41 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-#include <stdlib.h>
+#include "libft.h"
 
-#include "ft_printf.h"
-
-int	main(int ac, char **av)
+long int	stack_avg(t_deque *d)
 {
-	t_deque	*a;
-	t_deque	*b;
+	long int		sum;
+	t_deque_node	*cur;
 
-	a = parse_input(ac, av);
-	b = malloc(sizeof(t_deque));
-	b->head = NULL;
-	b->size = 0;
-	prepare_b(a, b);
-	// deque_print(a);
-	// deque_print(b);
-	while (a->size > 3)
-		iterate_a(a, b);
-	return (ps_clear(a, b));
+	sum = 0;
+	cur = d->head;
+	while (cur != d->head->prev)
+	{
+		sum += cur->data;
+		cur = cur->next;
+	}
+	sum += cur->data;
+	return (sum / d->size);
 }

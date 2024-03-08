@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:28:07 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 21:26:47 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:55:56 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,31 @@ void	iterate_a(t_deque *a, t_deque *b)
 				do_rotate(b, true, RB);
 			return ;
 		}
-		else if (ops_need < ops_need_next)
+		else if (ops_need < ops_need_next
+			&& cur_a->data > get_closest_node(b, cur_a)->data)
 		{
-			b_node_pos = deque_get_index(b, get_closest_node(b, cur_a));
-			bring_node_top(a, cur_a, RA);
-			bring_node_top(b, get_closest_node(b, cur_a), RB);
+			if (cur_a->data > stack_avg(a))
+			{
+				b_node_pos = deque_get_index(b, get_closest_node(b, cur_a));
+				bring_node_top(a, cur_a, RA);
+				bring_node_top(b, get_closest_node(b, cur_a), RB);
+				do_rotate(b, true, RB);
+				do_push(a, b, true, PB);
+				bring_node_back(b, b_node_pos + 1, RRB);
+				return ;
+			}
+			else
+				do_rotate(a, true, RA);
+		}
+		else
+		{
 			do_rotate(b, true, RB);
-			do_push(a, b, true, PB);
-			bring_node_back(b, b_node_pos + 1, RRB);
-			return ;
+			// do_rotate(a, true, RA);
+			// do_swap(a, true, SA);
+			continue ;
 		}
 		cur_a = cur_a->next;
 		i_a++;
 	}
+	return ;
 }
