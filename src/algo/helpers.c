@@ -6,12 +6,13 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 20:56:45 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/07 21:18:09 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:13:07 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
+#include <stdbool.h>
 #include <limits.h>
 
 #include "libft.h"
@@ -61,4 +62,25 @@ void	bring_node_back(t_deque *d, int index, char *op)
 	i = 0;
 	while (i++ < d->size && (int) i <= index)
 		do_reverse_rotate(d, true, op);
+}
+
+/**
+ * @brief  Check if stack `b` is sorted in descending order
+ * @param  *b: pointer to stack `b`
+ * @retval `true` if the stack is sorted properly, otherwise `false`
+ */
+bool	is_sorted(t_deque *d)
+{
+	t_deque_node	*cur;
+
+	cur = d->head;
+	while (cur != d->head->prev)
+	{
+		if (cur->data > cur->next->data)
+			return (false);
+		cur = cur->next;
+	}
+	if (cur->data < cur->next->data)
+		return (false);
+	return (true);
 }

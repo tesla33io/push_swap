@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:42:56 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/08 15:57:01 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:13:52 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int ac, char **av)
 	// deque_print(b);
 	while (a->size > 3)
 		iterate_a(a, b);
+	sort_three(a);
 	return (ps_clear(a, b));
 }
