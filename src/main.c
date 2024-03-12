@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps.h"
+#include "../include/ps.h"
 
 #include <stdlib.h>
 
-#include "ft_printf.h"
+#include "../ft_printf/includes/ft_printf.h"
 
 int	main(int ac, char **av)
 {

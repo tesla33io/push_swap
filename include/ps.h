@@ -15,7 +15,7 @@
 
 # include <stdbool.h>
 
-# include "libft.h"
+# include "../libft/libft.h"
 
 // Input handling
 
