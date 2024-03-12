@@ -21,7 +21,9 @@ int	main(int ac, char **av)
 	t_deque	*a;
 	t_deque	*b;
 
+	check_input(ac, av);
 	a = parse_input(ac, av);
+	deque_print(a);
 	if (a->size == 2 && !is_sorted(a))
 	{
 		do_swap(a, true, SA);

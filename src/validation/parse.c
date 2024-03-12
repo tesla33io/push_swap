@@ -10,11 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps.h"
+#include "../../include/ps.h"
 
+#include <stdbool.h>
 #include <stdlib.h>
 
-#include "libft.h"
+static void	parse_substr(char *str, t_deque *d)
+{
+	int		i;
+	char	*n_start;
+	bool	not_s;
+
+	i = -1;
+	not_s = false;
+	while (str[++i])
+	{
+		if (str[i] >= 48 && str[i] <= 57 && !not_s)
+		{
+			n_start = &str[i];
+			not_s = true;
+		}
+		else if (str[i] == ' ' && not_s)
+		{
+			deque_emplace_back(d, ft_atoi(n_start));
+			not_s = false;
+		}
+	}
+}
 
 t_deque	*parse_input(int argc, char **argv)
 {
@@ -25,11 +47,17 @@ t_deque	*parse_input(int argc, char **argv)
 	i = 0;
 	deque = malloc(sizeof(t_deque));
 	deque->head = NULL;
+	deque->size = 0;
 	while (++i < argc)
 	{
-		value = ft_atoi(argv[i]);
-		deque_emplace_back(deque, value);
+		if (c_in(' ', argv[i]))
+			parse_substr(argv[i], deque);
+		else
+		{
+			value = ft_atoi(argv[i]);
+			deque_emplace_back(deque, value);
+		}
 	}
-	deque->size = i - 1;
+	// deque->size += i - 1;
 	return (deque);
 }

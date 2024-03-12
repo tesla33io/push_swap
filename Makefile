@@ -20,6 +20,7 @@ NAME				:= push_swap
 
 CFILES				+= main.c						# Main
 CFILES				+= validation/parse.c			# Validation
+CFILES				+= validation/check_input.c		# #
 CFILES				+= algo/sort.c					# Sorting / Algo
 CFILES				+= algo/sort_three.c			# #
 CFILES				+= algo/helpers.c				# #

@@ -21,6 +21,7 @@
 // Input handling
 
 t_deque			*parse_input(int argc, char **argv);
+void			check_input(int ac, char **av);
 
 // Sorting
 
@@ -66,6 +67,7 @@ long int		stack_avg(t_deque *d);
 size_t			get_min_pos(t_deque *d);
 size_t			get_max_pos(t_deque *d);
 bool			is_sorted(t_deque *d);
+bool			c_in(char c, char *str);
 
 // Clear
 
