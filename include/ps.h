@@ -51,11 +51,11 @@ int				calc_rotate_ab(t_deque *a, t_deque *b);
 
 void			move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b);
 void			move_rrr(t_deque *a, t_deque *b, t_deque_node *node,
-		bool to_b);
+					bool to_b);
 void			move_rrarb(t_deque *a, t_deque *b, t_deque_node *node,
-		bool to_b);
+					bool to_b);
 void			move_rarrb(t_deque *a, t_deque *b, t_deque_node *node,
-		bool to_b);
+					bool to_b);
 
 // Utils
 
