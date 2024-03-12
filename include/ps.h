@@ -25,16 +25,14 @@ t_deque			*parse_input(int argc, char **argv);
 // Sorting
 
 void			prepare_b(t_deque *a, t_deque *b);
-void			iterate_a(t_deque *a, t_deque *b);
 
 void			sort_three(t_deque *d);
 
 t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node);
-void			bring_node_top(t_deque *d, t_deque_node *node, char *op);
-void			bring_node_back(t_deque *d, int index, char *op);
 bool			is_sorted(t_deque *d);
 void			fill_b(t_deque *a, t_deque *b);
 void			fill_a(t_deque *a, t_deque *b);
+void			shift_a(t_deque *a);
 
 // Calculations
 

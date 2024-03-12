@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps.h"
+#include "../../include/ps.h"
 
 #include <stdbool.h>
 #include <limits.h>
 
-#include "libft.h"
-#include "operations.h"
+#include "../../include/operations.h"
 
 t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node)
 {
@@ -46,41 +45,17 @@ t_deque_node	*get_closest_node(t_deque *trgt, t_deque_node *node)
 	return (closest);
 }
 
-void	bring_node_top(t_deque *d, t_deque_node *node, char *op)
+void	shift_a(t_deque *a)
 {
-	size_t	i;
-
-	i = 0;
-	while (i++ < d->size && d->head != node)
-		do_rotate(d, true, op);
-}
-
-void	bring_node_back(t_deque *d, int index, char *op)
-{
-	size_t	i;
-
-	i = 0;
-	while (i++ < d->size && (int) i <= index)
-		do_reverse_rotate(d, true, op);
-}
-
-/**
- * @brief  Check if stack `b` is sorted in descending order
- * @param  *b: pointer to stack `b`
- * @retval `true` if the stack is sorted properly, otherwise `false`
- */
-/*bool	is_sorted(t_deque *d)
-{
-	t_deque_node	*cur;
-
-	cur = d->head;
-	while (cur != d->head->prev)
+	if (get_min_pos(a) < a->size)
 	{
-		if (cur->data > cur->next->data)
-			return (false);
-		cur = cur->next;
+		while (get_min_pos(a) > 0)
+			do_reverse_rotate(a, true, RRA);
 	}
-	if (cur->data < cur->next->data)
-		return (false);
-	return (true);
-}*/
+	else
+	{
+		while (get_min_pos(a) > 0)
+			do_rotate(a, true, RA);
+	}
+}
+

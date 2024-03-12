@@ -26,12 +26,9 @@ int	main(int ac, char **av)
 	b->head = NULL;
 	b->size = 0;
 	prepare_b(a, b);
-	// deque_print(a);
-	// deque_print(b);
-	// while (a->size > 3)
-	// 	iterate_a(a, b);
 	fill_b(a, b);
 	sort_three(a);
 	fill_a(a, b);
+	shift_a(a);
 	return (ps_clear(a, b));
 }
