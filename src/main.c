@@ -14,7 +14,7 @@
 
 #include <stdlib.h>
 
-#include "../ft_printf/includes/ft_printf.h"
+#include "../include/operations.h"
 
 int	main(int ac, char **av)
 {
@@ -22,6 +22,11 @@ int	main(int ac, char **av)
 	t_deque	*b;
 
 	a = parse_input(ac, av);
+	if (a->size == 2 && !is_sorted(a))
+	{
+		do_swap(a, true, SA);
+		exit(0);
+	}
 	b = malloc(sizeof(t_deque));
 	b->head = NULL;
 	b->size = 0;

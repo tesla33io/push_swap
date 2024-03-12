@@ -46,7 +46,8 @@ void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_rotate(a, true, RA);
 	do_push(b, a, true, PA);
-	fix_head(a, SA);
+	if (a->head->data > a->head->next->data)
+		do_swap(a, true, SA);
 }
 
 void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
@@ -74,7 +75,8 @@ void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_reverse_rotate(a, true, RRA);
 	do_push(b, a, true, PA);
-	fix_head(a, SA);
+	if (a->head->data > a->head->next->data)
+		do_swap(a, true, SA);
 }
 
 void	move_rrarb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
