@@ -3,6 +3,7 @@
 push_swap_visualizer/
 vzr
 imgui.ini
+checker_linux
 
 # Prerequisites
 *.d

@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 20:56:45 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/08 17:13:07 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:46:36 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ void	shift_a(t_deque *a)
 			do_rotate(a, true, RA);
 	}
 }
-

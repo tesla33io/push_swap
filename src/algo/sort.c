@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 19:28:07 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/08 17:06:41 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:05:04 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ void	prepare_b(t_deque *a, t_deque *b)
 
 void	fill_b_switch(int *i, t_deque_node **cur, t_deque *a, t_deque *b)
 {
-	if (*i == calc_rr(a, b, *cur))
+	if (*i == calc_rr_to_b(a, b, *cur))
 	{
 		move_rr(a, b, *cur, true);
 		*i = -42;
 	}
-	else if (*i == calc_rrr(a, b, *cur))
+	else if (*i == calc_rrr_to_b(a, b, *cur))
 	{
 		move_rrr(a, b, *cur, true);
 		*i = -42;
 	}
-	else if (*i == calc_rarrb(a, b, *cur))
+	else if (*i == calc_rarrb_to_b(a, b, *cur))
 	{
 		move_rarrb(a, b, *cur, true);
 		*i = -42;
 	}
-	else if (*i == calc_rrarb(a, b, *cur))
+	else if (*i == calc_rrarb_to_b(a, b, *cur))
 	{
 		move_rrarb(a, b, *cur, true);
 		*i = -42;
@@ -70,22 +70,22 @@ void	fill_b(t_deque *a, t_deque *b)
 
 void	fill_a_switch(int *i, t_deque_node **cur, t_deque *a, t_deque *b)
 {
-	if (*i == calc_rr_a(a, b, *cur))
+	if (*i == calc_rr_to_a(a, b, *cur))
 	{
 		move_rr(a, b, *cur, false);
 		*i = -42;
 	}
-	else if (*i == calc_rrr_a(a, b, *cur))
+	else if (*i == calc_rrr_to_a(a, b, *cur))
 	{
 		move_rrr(a, b, *cur, false);
 		*i = -42;
 	}
-	else if (*i == calc_rarrb_a(a, b, *cur))
+	else if (*i == calc_rarrb_to_a(a, b, *cur))
 	{
 		move_rarrb(a, b, *cur, false);
 		*i = -42;
 	}
-	else if (*i == calc_rrarb_a(a, b, *cur))
+	else if (*i == calc_rrarb_to_a(a, b, *cur))
 	{
 		move_rrarb(a, b, *cur, false);
 		*i = -42;

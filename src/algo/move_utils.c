@@ -1,9 +1,25 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_utils_ab.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/12 20:45:36 by astavrop          #+#    #+#             */
+/*   Updated: 2024/03/12 20:53:37 by astavrop         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/ps.h"
 #include "../../include/operations.h"
 
 #include <stdbool.h>
+
+static void	fix_head(t_deque *d, char *op)
+{
+	if (d->head->data < d->head->next->data)
+		do_swap(d, true, op);
+}
 
 void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 {
@@ -19,8 +35,7 @@ void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_rotate(b, true, RB);
 		do_push(a, b, true, PB);
-		if (b->head->data < b->head->next->data)
-			do_swap(b, true, SB);
+		fix_head(b, SB);
 		return ;
 	}
 	cn = get_closest_node(a, node);
@@ -31,8 +46,7 @@ void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_rotate(a, true, RA);
 	do_push(b, a, true, PA);
-	if (a->head->data > a->head->next->data)
-		do_swap(a, true, SA);
+	fix_head(a, SA);
 }
 
 void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
@@ -49,8 +63,7 @@ void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_reverse_rotate(b, true, RRB);
 		do_push(a, b, true, PB);
-		if (b->head->data < b->head->next->data)
-			do_swap(b, true, SB);
+		fix_head(b, SB);
 		return ;
 	}
 	cn = get_closest_node(a, node);
@@ -61,8 +74,7 @@ void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_reverse_rotate(a, true, RRA);
 	do_push(b, a, true, PA);
-	if (a->head->data > a->head->next->data)
-		do_swap(a, true, SA);
+	fix_head(a, SA);
 }
 
 void	move_rrarb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)

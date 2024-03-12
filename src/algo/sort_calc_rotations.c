@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_calc_rotations.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/12 20:45:44 by astavrop          #+#    #+#             */
+/*   Updated: 2024/03/12 21:05:04 by astavrop         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/ps.h"
 
@@ -15,14 +25,14 @@ int	calc_rotate_ab(t_deque *a, t_deque *b)
 	i = 0;
 	while (cur && i < a->size)
 	{
-		if (n > calc_rr(a, b, cur))
-			n = calc_rr(a, b, cur);
-		if (n > calc_rrr(a, b, cur))
-			n = calc_rrr(a, b, cur);
-		if (n > calc_rarrb(a, b, cur))
-			n = calc_rarrb(a, b, cur);
-		if (n > calc_rrarb(a, b, cur))
-			n = calc_rrarb(a, b, cur);
+		if (n > calc_rr_to_b(a, b, cur))
+			n = calc_rr_to_b(a, b, cur);
+		if (n > calc_rrr_to_b(a, b, cur))
+			n = calc_rrr_to_b(a, b, cur);
+		if (n > calc_rarrb_to_b(a, b, cur))
+			n = calc_rarrb_to_b(a, b, cur);
+		if (n > calc_rrarb_to_b(a, b, cur))
+			n = calc_rrarb_to_b(a, b, cur);
 		cur = cur->next;
 		i++;
 	}
@@ -40,14 +50,14 @@ int	calc_rotate_ba(t_deque *a, t_deque *b)
 	n = __INT_MAX__;
 	while (cur && i < b->size)
 	{
-		if (n > calc_rr_a(a, b, cur))
-			n = calc_rr_a(a, b, cur);
-		if (n > calc_rrr_a(a, b, cur))
-			n = calc_rrr_a(a, b, cur);
-		if (n > calc_rarrb_a(a, b, cur))
-			n = calc_rarrb_a(a, b, cur);
-		if (n > calc_rrarb_a(a, b, cur))
-			n = calc_rrarb_a(a, b, cur);
+		if (n > calc_rr_to_a(a, b, cur))
+			n = calc_rr_to_a(a, b, cur);
+		if (n > calc_rrr_to_a(a, b, cur))
+			n = calc_rrr_to_a(a, b, cur);
+		if (n > calc_rarrb_to_a(a, b, cur))
+			n = calc_rarrb_to_a(a, b, cur);
+		if (n > calc_rrarb_to_a(a, b, cur))
+			n = calc_rrarb_to_a(a, b, cur);
 		cur = cur->next;
 		i++;
 	}

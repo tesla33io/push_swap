@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:43:10 by astavrop          #+#    #+#             */
-/*   Updated: 2024/03/08 17:13:20 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:05:04 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ void			shift_a(t_deque *a);
 
 // Calculations
 
-int				calc_rr(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rrr(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rrarb(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rarrb(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rr_to_b(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrr_to_b(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrarb_to_b(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rarrb_to_b(t_deque *a, t_deque *b, t_deque_node *node);
 
-int				calc_rr_a(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rrr_a(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rarrb_a(t_deque *a, t_deque *b, t_deque_node *node);
-int				calc_rrarb_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rr_to_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrr_to_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rarrb_to_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrarb_to_a(t_deque *a, t_deque *b, t_deque_node *node);
 
 int				calc_rotate_ba(t_deque *a, t_deque *b);
 int				calc_rotate_ab(t_deque *a, t_deque *b);

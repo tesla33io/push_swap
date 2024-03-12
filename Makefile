@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:41:15 by astavrop          #+#    #+#              #
-#    Updated: 2024/03/08 17:13:34 by astavrop         ###   ########.fr        #
+#    Updated: 2024/03/12 20:55:01 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,23 +18,23 @@ INCLUDES			:= -I./include/ -I./ft_printf/includes -I./libft/ -I.
 NAME				:= push_swap
 
 
-CFILES				+= main.c					# Main
-CFILES				+= validation/parse.c		# Validation
-CFILES				+= algo/sort.c				# Sorting / Algo
-CFILES				+= algo/sort_three.c		# #
-CFILES				+= algo/helpers.c			# #
+CFILES				+= main.c						# Main
+CFILES				+= validation/parse.c			# Validation
+CFILES				+= algo/sort.c					# Sorting / Algo
+CFILES				+= algo/sort_three.c			# #
+CFILES				+= algo/helpers.c				# #
 CFILES				+= algo/sort_utils_ab.c			# #
 CFILES				+= algo/sort_utils_ba.c			# #
-CFILES				+= algo/sort_calc_rotations.c			# #
-CFILES				+= algo/move_utils_ab.c			# #
-CFILES				+= ops/do_push.c			# Operations
-CFILES				+= ops/do_rotate.c			# #
-CFILES				+= ops/do_swap.c			# #
-CFILES				+= utils/deque_utils.c		# Utils
-CFILES				+= utils/ft_abs.c			# #
-CFILES				+= utils/avg.c				# #
+CFILES				+= algo/sort_calc_rotations.c	# #
+CFILES				+= algo/move_utils.c			# #
+CFILES				+= ops/do_push.c				# Operations
+CFILES				+= ops/do_rotate.c				# #
+CFILES				+= ops/do_swap.c				# #
+CFILES				+= utils/deque_utils.c			# Utils
+CFILES				+= utils/ft_abs.c				# #
+CFILES				+= utils/avg.c					# #
 CFILES				+= utils/minmax.c				# #
-CFILES				+= clear/clear.c			# Clear
+CFILES				+= clear/clear.c				# Clear
 
 
 OBJ_DIR				:= ./obj/
