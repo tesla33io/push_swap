@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps.h"
+#include "../../include/ps.h"
 
 #include <stdbool.h>
 #include <stddef.h>
 #include <limits.h>
 
-#include "libft.h"
-#include "ft_printf.h"
-#include "operations.h"
+#include "../../ft_printf/includes/ft_printf.h"
+#include "../../include/operations.h"
 
 void	prepare_b(t_deque *a, t_deque *b)
 {
@@ -81,4 +80,29 @@ void	iterate_a(t_deque *a, t_deque *b)
 		i_a++;
 	}
 	return ;
+}
+
+void	fill_b(t_deque *a, t_deque *b)
+{
+	int				i;
+	t_deque_node	*cur;
+
+	while (a->size > 3 && !is_sorted(a))
+	{
+		cur = a->head;
+		i = calc_rotate_ab(a, b);
+		while (i >= 0 && cur != b->head)
+		{
+			if (i == calc_rr(a, b, cur))
+				move_rr(a, b, cur, true);
+			else if (i == calc_rrr(a, b, cur))
+				move_rrr(a, b, cur, true);
+			else if (i == calc_rarrb(a, b, cur))
+				move_rarrb(a, b, cur, true);
+			else if (i == calc_rrarb(a, b, cur))
+				move_rrarb(a, b, cur, true);
+			else
+				cur = cur->next;
+		}
+	}
 }

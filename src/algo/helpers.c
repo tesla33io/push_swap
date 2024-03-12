@@ -69,7 +69,7 @@ void	bring_node_back(t_deque *d, int index, char *op)
  * @param  *b: pointer to stack `b`
  * @retval `true` if the stack is sorted properly, otherwise `false`
  */
-bool	is_sorted(t_deque *d)
+/*bool	is_sorted(t_deque *d)
 {
 	t_deque_node	*cur;
 
@@ -83,4 +83,4 @@ bool	is_sorted(t_deque *d)
 	if (cur->data < cur->next->data)
 		return (false);
 	return (true);
-}
+}*/

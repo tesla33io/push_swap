@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps.h"
-#include "libft.h"
-#include "ft_printf.h"
-#include "colors.h"
+#include "../../include/ps.h"
+#include "../../include/colors.h"
+#include <stdbool.h>
 
 void	deque_print(t_deque *deque)
 {
@@ -40,4 +39,18 @@ int	deque_get_index(t_deque *d, t_deque_node *node)
 	while (cur != node && i++ < d->size)
 		cur = cur->next;
 	return ((int) i);
+}
+
+bool	is_sorted(t_deque *d)
+{
+	t_deque_node	*cur;
+
+	cur = d->head;
+	while (cur != d->head->prev)
+	{
+		if (cur->data > cur->next->data)
+			return (false);
+		cur = cur->next;
+	}
+	return (true);
 }
