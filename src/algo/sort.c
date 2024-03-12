@@ -106,3 +106,28 @@ void	fill_b(t_deque *a, t_deque *b)
 		}
 	}
 }
+
+void	fill_a(t_deque *a, t_deque *b)
+{
+	int				i;
+	t_deque_node	*cur;
+
+	while (b->size)
+	{
+		cur = b->head;
+		i = calc_rotate_ba(a, b);
+		while (i >= 0 && cur != a->head)
+		{
+			if (i == calc_rr_a(a, b, cur))
+				move_rr(a, b, cur, false);
+			else if (i == calc_rrr_a(a, b, cur))
+				move_rrr(a, b, cur, false);
+			else if (i == calc_rarrb_a(a, b, cur))
+				move_rarrb(a, b, cur, false);
+			else if (i == calc_rrarb_a(a, b, cur))
+				move_rrarb(a, b, cur, false);
+			else
+				cur = cur->next;
+		}
+	}
+}

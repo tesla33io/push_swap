@@ -34,6 +34,7 @@ void			bring_node_top(t_deque *d, t_deque_node *node, char *op);
 void			bring_node_back(t_deque *d, int index, char *op);
 bool			is_sorted(t_deque *d);
 void			fill_b(t_deque *a, t_deque *b);
+void			fill_a(t_deque *a, t_deque *b);
 
 // Calculations
 
@@ -42,6 +43,12 @@ int				calc_rrr(t_deque *a, t_deque *b, t_deque_node *node);
 int				calc_rrarb(t_deque *a, t_deque *b, t_deque_node *node);
 int				calc_rarrb(t_deque *a, t_deque *b, t_deque_node *node);
 
+int				calc_rr_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrr_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rarrb_a(t_deque *a, t_deque *b, t_deque_node *node);
+int				calc_rrarb_a(t_deque *a, t_deque *b, t_deque_node *node);
+
+int				calc_rotate_ba(t_deque *a, t_deque *b);
 int				calc_rotate_ab(t_deque *a, t_deque *b);
 
 void			move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b);

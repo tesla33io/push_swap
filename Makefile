@@ -24,6 +24,7 @@ CFILES				+= algo/sort.c				# Sorting / Algo
 CFILES				+= algo/sort_three.c		# #
 CFILES				+= algo/helpers.c			# #
 CFILES				+= algo/sort_utils_ab.c			# #
+CFILES				+= algo/sort_utils_ba.c			# #
 CFILES				+= algo/sort_calc_rotations.c			# #
 CFILES				+= algo/move_utils_ab.c			# #
 CFILES				+= ops/do_push.c			# Operations

@@ -32,5 +32,6 @@ int	main(int ac, char **av)
 	// 	iterate_a(a, b);
 	fill_b(a, b);
 	sort_three(a);
+	fill_a(a, b);
 	return (ps_clear(a, b));
 }
