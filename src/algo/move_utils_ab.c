@@ -19,6 +19,8 @@ void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_rotate(b, true, RB);
 		do_push(a, b, true, PB);
+		if (b->head->data < b->head->next->data)
+			do_swap(b, true, SB);
 		return ;
 	}
 	cn = get_closest_node(a, node);
@@ -29,6 +31,8 @@ void	move_rr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_rotate(a, true, RA);
 	do_push(b, a, true, PA);
+	if (a->head->data > a->head->next->data)
+		do_swap(a, true, SA);
 }
 
 void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
@@ -45,6 +49,8 @@ void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_reverse_rotate(b, true, RRB);
 		do_push(a, b, true, PB);
+		if (b->head->data < b->head->next->data)
+			do_swap(b, true, SB);
 		return ;
 	}
 	cn = get_closest_node(a, node);
@@ -55,6 +61,8 @@ void	move_rrr(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 	while (deque_get_index(a, cn) > 0)
 		do_reverse_rotate(a, true, RRA);
 	do_push(b, a, true, PA);
+	if (a->head->data > a->head->next->data)
+		do_swap(a, true, SA);
 }
 
 void	move_rrarb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
@@ -69,6 +77,8 @@ void	move_rrarb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_rotate(b, true, RB);
 		do_push(a, b, true, PB);
+		if (b->head->data < b->head->next->data)
+			do_swap(b, true, SB);
 	}
 	else
 	{
@@ -78,6 +88,8 @@ void	move_rrarb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (b->head != node)
 			do_rotate(b, true, RB);
 		do_push(b, a, true, PA);
+		if (a->head->data > a->head->next->data)
+			do_swap(a, true, SA);
 	}
 }
 
@@ -93,6 +105,8 @@ void	move_rarrb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (deque_get_index(b, cn) > 0)
 			do_reverse_rotate(b, true, RRB);
 		do_push(a, b, true, PB);
+		if (b->head->data < b->head->next->data)
+			do_swap(b, true, SB);
 	}
 	else
 	{
@@ -102,5 +116,7 @@ void	move_rarrb(t_deque *a, t_deque *b, t_deque_node *node, bool to_b)
 		while (b->head != node)
 			do_reverse_rotate(b, true, RRB);
 		do_push(b, a, true, PA);
+		if (a->head->data > a->head->next->data)
+			do_swap(a, true, SA);
 	}
 }
