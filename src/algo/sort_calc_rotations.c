@@ -21,7 +21,7 @@ int	calc_rotate_ab(t_deque *a, t_deque *b)
 	t_deque_node	*cur;
 
 	cur = a->head;
-	n = __INT_MAX__;
+	n = INT_MAX;
 	i = 0;
 	while (cur && i < a->size)
 	{
@@ -47,7 +47,7 @@ int	calc_rotate_ba(t_deque *a, t_deque *b)
 
 	cur = b->head;
 	i = 0;
-	n = __INT_MAX__;
+	n = INT_MAX;
 	while (cur && i < b->size)
 	{
 		if (n > calc_rr_to_a(a, b, cur))
