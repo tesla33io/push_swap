@@ -56,4 +56,4 @@ t_deque	*parse_input(int argc, char **argv)
 		deque_emplace_back(deque, value);
 	}
 	return (deque);
-}			
+}
