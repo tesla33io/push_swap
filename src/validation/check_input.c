@@ -55,7 +55,8 @@ static void	check_non_numeric(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!(av[i][j] >= 48 && av[i][j] <= 57))
+			if (!(av[i][j] >= 48 && av[i][j] <= 57) && av[i][j] != 43
+					&& av[i][j] != 45)
 				print_error();
 			j++;
 		}
