@@ -28,7 +28,6 @@ t_deque_node	*deque_pop_front(t_deque *deque)
 		deque->head = NULL;
 	else
 	{
-		// free(deque->head);
 		deque->head = next;
 		next->prev = prev;
 		prev->next = next;
