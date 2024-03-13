@@ -15,6 +15,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+/*
 static void	parse_substr(char *str, t_deque *d)
 {
 	int		i;
@@ -37,6 +38,7 @@ static void	parse_substr(char *str, t_deque *d)
 		}
 	}
 }
+*/
 
 t_deque	*parse_input(int argc, char **argv)
 {
@@ -50,14 +52,8 @@ t_deque	*parse_input(int argc, char **argv)
 	deque->size = 0;
 	while (++i < argc)
 	{
-		if (c_in(' ', argv[i]))
-			parse_substr(argv[i], deque);
-		else
-		{
-			value = ft_atoi(argv[i]);
-			deque_emplace_back(deque, value);
-		}
+		value = ft_atoi(argv[i]);
+		deque_emplace_back(deque, value);
 	}
-	// deque->size += i - 1;
 	return (deque);
 }
