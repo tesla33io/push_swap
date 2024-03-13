@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #include "../../include/ps.h"
-#include <iso646.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <limits.h>
 #include "../../ft_printf/includes/ft_printf.h"
 
 #define MAX_CAPACITY 1000
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 static void	print_error(void)
 {
@@ -79,9 +79,9 @@ void	check_input(int ac, char **av)
 	int64_t	tmp[MAX_CAPACITY];
 	int64_t	i;
 
+	check_non_numeric(ac, av);
 	if (ac == 1 || ac == 2)
 		exit(0);
-	check_non_numeric(ac, av);
 	i = -1;
 	while (++i < MAX_CAPACITY)
 		tmp[i] = 0;
@@ -89,6 +89,8 @@ void	check_input(int ac, char **av)
 	while (++i < ac - 1)
 	{
 		if (c_in(' ', av[i + 1]))
+			print_error();
+		if (ft_atoi(av[i + 1]) > INT_MAX || ft_atoi(av[i + 1]) < INT_MIN)
 			print_error();
 		tmp[i] = ft_atoi(av[i + 1]);
 	}
