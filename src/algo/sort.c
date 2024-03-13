@@ -13,10 +13,7 @@
 #include "../../include/ps.h"
 
 #include <stdbool.h>
-#include <stddef.h>
-#include <limits.h>
 
-#include "../../ft_printf/includes/ft_printf.h"
 #include "../../include/operations.h"
 
 void	prepare_b(t_deque *a, t_deque *b)
